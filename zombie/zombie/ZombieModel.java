@@ -1,6 +1,8 @@
 package zombie;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ZombieModel {
@@ -8,11 +10,14 @@ public class ZombieModel {
 	private int tempx;
 	private int tempy;
 	
+	private Human[] users = new Human[30];
+	private Zombie[] zombies = new Zombie[30];
 	private final Color[][] matrix;
 	private final int width;
 	private final int height;
 	private final int dotSize;
 	private Human human;
+	private Zombie zombie;
 	
 	public ZombieModel(int widthArg, int heightArg, int dotSizeArg) {
 		width = widthArg;
@@ -26,6 +31,7 @@ public class ZombieModel {
 		}
 	}
 	public Human getHuman() { return human; }
+	public Zombie getZombie() { return zombie; }
 	
 	public int getWidth() { return width; }
 	public int getHeight() { return height; }
@@ -89,9 +95,23 @@ public class ZombieModel {
 				i++;
 			}
 		}
-		human = new Human(this);
+
+		for(int i=0;i<30;i++){   
+		    Human newUser = new Human(this);
+		    users[i]=newUser;
+		}
+		//for(int i=0;i<30;i++){   
+		    Zombie newZombie = new Zombie(this);
+		    zombie=newZombie;
+		//}
 	}
 	public void update() {
-		human.update();
+		for(int i=0;i<30;i++){   
+		    users[i].update();
+		}
+		   
+			zombie.update();
+		
+		
 	}
 }

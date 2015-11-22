@@ -42,10 +42,10 @@ public class ZombieController implements MouseListener {
 		int dot = 15 * model.getDotSize();
 		int dot1 = 45 * model.getDotSize();
 		int dot2 = 40 * model.getDotSize();
-		if(e.getX() < dot2 && e.getY() > dot && e.getY() < dot1) model.getHuman().setDirection(Direction.WEST);
-		else if(e.getX() > dot2 && e.getY() > dot && e.getY() < dot1) model.getHuman().setDirection(Direction.EAST);
-		else if(e.getY() < dot1) model.getHuman().setDirection(Direction.NORTH);
-		else if(e.getY() > dot) model.getHuman().setDirection(Direction.SOUTH);
+		if(e.getX() < dot2 && e.getY() > dot && e.getY() < dot1) model.getZombie().setDirection(Direction.WEST);
+		else if(e.getX() > dot2 && e.getY() > dot && e.getY() < dot1) model.getZombie().setDirection(Direction.EAST);
+		else if(e.getY() < dot1) model.getZombie().setDirection(Direction.NORTH);
+		else if(e.getY() > dot) model.getZombie().setDirection(Direction.SOUTH);
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
