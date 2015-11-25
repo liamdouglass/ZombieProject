@@ -49,6 +49,14 @@ public class ZombieModel {
 				matrix[i][j]=Color.BLUE;
 			}
 		}
+		//======INIT BRIDGE====//
+		Random rany= new Random();
+		int y =rany.nextInt(height-5);
+		for(int i=x; i<x+5;i++){
+			for(int j=y;j<y+5;j++){
+				matrix[i][j]=Color.darkGray;
+			}
+		}
 		//====INIT ROCKS====//
 		Random rockx= new Random();
 		Random rocky= new Random();
@@ -109,9 +117,6 @@ public class ZombieModel {
 		for(int i=0;i<30;i++){   
 		    users[i].update();
 		}
-		   
-			zombie.update();
-		
-		
+		zombie.update();
 	}
 }
